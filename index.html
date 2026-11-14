@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sindh Govt Job Eligibility Checker — check if you are eligible for real Sindh government posts before you apply.">
+  <title>Sindh Govt Job Eligibility Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" aria-hidden="true">TB</div>
+      <div>
+        <h1>Sindh Govt Job Eligibility Checker</h1>
+        <p class="tagline">Check before you apply — domicile, qualification, age &amp; certificates</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro card">
+      <h2>How it works</h2>
+      <p>Enter your domicile, highest qualification, age and certificates. The checker compares
+        your profile against 6 real Sindh posts (sample data checked November 2026) and tells you
+        for each post whether you are <strong>eligible</strong> or <strong>not eligible</strong> — and
+        the single reason if you are not.</p>
+      <p class="demo-note">Demo example pre-filled below: domicile <strong>Ghotki</strong>, qualification
+        <strong>ADS (14-year graduation)</strong>, age <strong>24</strong>, no MS Office certificate.
+        Try changing the answers to see how the results change.</p>
+    </section>
+
+    <section class="card">
+      <h2>Your profile</h2>
+      <form id="checker-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="domicile">Domicile district (Sindh)</label>
+            <select id="domicile" name="domicile" required>
+              <option value="">Select district</option>
+              <option value="Ghotki" selected>Ghotki</option>
+              <option value="Sukkur">Sukkur</option>
+              <option value="Karachi">Karachi</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Larkana">Larkana</option>
+              <option value="Khairpur">Khairpur</option>
+              <option value="Shikarpur">Shikarpur</option>
+              <option value="Jacobabad">Jacobabad</option>
+              <option value="Kashmore">Kashmore</option>
+              <option value="Qambar Shahdadkot">Qambar Shahdadkot</option>
+              <option value="Dadu">Dadu</option>
+              <option value="Jamshoro">Jamshoro</option>
+              <option value="Matiari">Matiari</option>
+              <option value="Tando Allahyar">Tando Allahyar</option>
+              <option value="Tando Muhammad Khan">Tando Muhammad Khan</option>
+              <option value="Badin">Badin</option>
+              <option value="Thatta">Thatta</option>
+              <option value="Sujawal">Sujawal</option>
+              <option value="Mirpurkhas">Mirpurkhas</option>
+              <option value="Tharparkar">Tharparkar</option>
+              <option value="Umerkot">Umerkot</option>
+              <option value="Sanghar">Sanghar</option>
+              <option value="Naushahro Feroze">Naushahro Feroze</option>
+              <option value="Shaheed Benazirabad">Shaheed Benazirabad</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="qualification">Highest qualification</label>
+            <select id="qualification" name="qualification" required>
+              <option value="matric">Matric</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="ads" selected>ADS — 14-year graduation</option>
+              <option value="bscs-final">BSCS — final year (not yet completed)</option>
+              <option value="bscs">BSCS — completed (16-year)</option>
+              <option value="masters">Masters (16-year+)</option>
+            </select>
+            <p class="hint">ADS counts as graduation for graduation-required posts. A final-year BSCS does not count as a completed degree yet.</p>
+          </div>
+
+          <div class="field">
+            <label for="age">Age (years)</label>
+            <input type="number" id="age" name="age" min="15" max="60" value="24" required>
+          </div>
+
+          <div class="field checkboxes">
+            <span class="field-label">Certificates</span>
+            <label class="check">
+              <input type="checkbox" id="ms-office">
+              <span>I hold an MS Office certificate</span>
+            </label>
+            <label class="check">
+              <input type="checkbox" id="typing">
+              <span>I can type 40 WPM</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Check Eligibility</button>
+          <button type="button" class="btn btn-secondary" id="reset-demo">Reset to demo example</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <h2>Your results</h2>
+      <p id="summary" class="summary">Press “Check Eligibility” to see your results for all 6 posts.</p>
+      <div id="results-list" class="results-list"></div>
+    </section>
+
+    <section class="card disclaimer">
+      <h2>Important note</h2>
+      <p>This is a <strong>demo checker</strong> built from the post details as checked in
+        November 2026. Rules, last dates and fees can change. Always verify the eligibility,
+        last date and fee on the <strong>official advertisement</strong> before applying — for
+        example the STS / SPSC portal or the bank's official careers page.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Sindh Govt Job Eligibility Checker &middot; Built by Tasleem Bibi &middot; Sukkur, Sindh, Pakistan</p>
+      <p class="footer-note">Sample post data checked November 2026. Not an official government website.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
